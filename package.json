@@ -4,7 +4,8 @@
   "description": "This service provides the Title bar information for a specified item. The specified item is defined by it's associated itemID.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
+    "server": "nodemon ./server/server.js",
+    "dev": "webpack --mode development -w",
     "build": "webpack --mode production",
     "test": ""
   },
@@ -31,5 +32,8 @@
     "react-dom": "^16.8.1",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }
