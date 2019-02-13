@@ -4,17 +4,32 @@
   "description": "This service provides the Title bar information for a specified item. The specified item is defined by it's associated itemID.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "test": ""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SeanCMeyer/ItemTitle.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sean Meyer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SeanCMeyer/ItemTitle/issues"
   },
-  "homepage": "https://github.com/SeanCMeyer/ItemTitle#readme"
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  }
 }
