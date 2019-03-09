@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const { db } = require("./connection");
 require("dotenv").config({ path: __dirname + "/../.env" });
 const { DBURI, DBPORT, DBNAME } = process.env;

@@ -5,7 +5,6 @@ const { db } = require("./connection");
 const { DBURI, DBPORT, DBNAME } = process.env;
 
 db(`mongodb://${DBURI}:${DBPORT}/${DBNAME}`);
-console.log(ItemTitle);
 
 const batchInsert = data => {
   ItemTitle.insertMany(data)
@@ -14,8 +13,9 @@ const batchInsert = data => {
     .catch(err => console.error(err));
 };
 
-const getItemTitle = id => {
-  ItemTitle.findOne(id);
+const getItemTitle = (id, cb) => {
+  console.log("id :", id);
+  ItemTitle.findOne({ titleId: id }).exec(cb);
 };
 
 module.exports = { batchInsert, getItemTitle };

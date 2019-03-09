@@ -5,7 +5,7 @@ const db = options => {
     useNewUrlParser: true
   });
 
-  let con = mongoose.connection;
+  const con = mongoose.connection;
 
   con.on("error", () => console.error("connection error boss"));
   con.on("connected", () => console.log("connected to DB boss!"));

@@ -1,12 +1,50 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import axios from "axios";
 
-class ItemTitle extends Component {
+export default class ItemTitle extends Component {
+  constructor() {
+    super();
+    this.state = {
+      itemId: 666,
+      currentItem: {
+        model: "loading",
+        sku: "loading",
+        title: "loading"
+      }
+    };
+    this.handleGetRequest = this.handleGetRequest.bind(this);
+  }
+
+  componentDidMount() {
+    this.handleGetRequest();
+  }
+
+  handleGetRequest() {
+    const id = Math.floor(Math.random() * Math.floor(1000));
+    axios
+      .get(`http://localhost:5001/api/title/${id}`)
+      .then(response => {
+        this.setState({
+          itemId: response.data.titleId,
+          currentItem: response.data
+        });
+        console.log(this.state.currentItem);
+      })
+      .catch(err => console.error(err));
+  }
+
   render() {
-    return <div>this is doin stuff!</div>;
+    const { model, sku, title } = this.state.currentItem;
+    return (
+      <div>
+        <h1>{title}</h1>
+        <p>
+          <strong>Model: </strong>
+          {model}
+          <strong>SKU: </strong> {sku}
+        </p>
+        <button onClick={this.handleGetRequest}> do something </button>
+      </div>
+    );
   }
 }
-
-export default ItemTitle;
-
-ReactDOM.render(<ItemTitle />, document.getElementById("root"));
