@@ -1,4 +1,3 @@
-const faker = require("faker");
 faker.seed(38);
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const csvWriter = createCsvWriter({
