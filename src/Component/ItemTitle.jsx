@@ -28,7 +28,6 @@ export default class ItemTitle extends Component {
           itemId: response.data.titleId,
           currentItem: response.data
         });
-        console.log(this.state.currentItem);
       })
       .catch(err => console.error(err));
   }
@@ -36,14 +35,20 @@ export default class ItemTitle extends Component {
   render() {
     const { model, sku, title } = this.state.currentItem;
     return (
-      <div>
-        <h1>{title}</h1>
-        <p>
-          <strong>Model: </strong>
-          {model}
-          <strong>SKU: </strong> {sku}
-        </p>
-        <button onClick={this.handleGetRequest}> do something </button>
+      <div className={"container"}>
+        <div className={"wrapper"}>
+          <h1 className={"heading"}>{title}</h1>
+          <div className={"product-info-container"}>
+            <span className={"product-data"}>
+              <strong>Model</strong> :
+            </span>
+            <span className={"product-data"}>{model}</span>
+            <span className={"product-data"}>
+              <strong>SKU</strong> :
+            </span>
+            <span className={"product-data"}>{sku}</span>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,3 +1,38 @@
 body {
-  line-height: 10;
+  font-size: 13px;
+  line-height: normal;
+  color: #040c13;
+  font-family: "Barlow", Arial, Helvetica, sans-serif;
+}
+
+div {
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+.wrapper {
+  margin-top: 15px;
+}
+
+.heading {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+.product-info-container {
+  width: 100%;
+}
+
+.product-data {
+  padding-right: 10px;
+  padding-top: 10px;
+  display: inline-block;
 }
