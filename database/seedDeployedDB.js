@@ -3,8 +3,11 @@ const mongoose = require("mongoose");
 const { batchData } = require("./mockDataGenerator");
 const { ItemTitle } = require("./Schema");
 const { TITLES_URL } = process.env;
+Promise = require("bluebird");
 
-const dataList = batchData(1000);
+Promise.all(batchData(1000))
+  .then(datas => batchInsert(datas))
+  .catch(console.error);
 
 mongoose.connect(TITLES_URL, {
   useNewUrlParser: true
@@ -21,7 +24,7 @@ const batchInsert = data => {
 };
 
 con.on("error", () => console.error("connection error boss"));
-con.on("connected", () => batchInsert(dataList));
+con.on("connected", () => console.log("yayay"));
 con.on("disconnected", () => {
   con.close(() => {
     console.log("done with this DB, bye now");
