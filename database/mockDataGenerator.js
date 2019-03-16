@@ -15,7 +15,7 @@ const batchData = num => {
   for (i = 1; i < num + 1; i++) {
     results.push(createFakeItem(i));
   }
-  console.log(results);
+  console.log(results[600], "and length of array", results.length);
   return results;
 };
 

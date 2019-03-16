@@ -8,7 +8,8 @@
     "dev": "webpack --mode development -w",
     "build": "webpack --mode production",
     "test": "jest",
-    "seed": "node ./database/seedDB.js"
+    "seedloc": "node ./database/seedDB.js",
+    "seeddep": "node ./database/seedDeployedDB.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "bluebird": "^3.5.3",
     "css-loader": "^2.1.0",
     "dotenv": "^6.2.0",
     "faker": "^4.1.0",
