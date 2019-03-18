@@ -1,10 +1,10 @@
 require("dotenv").config({ path: __dirname + "/../.env" });
 const mongoose = require("mongoose");
 const { ItemTitle } = require("./Schema");
-const { LOCAL_URL } = process.env;
+const { TITLES_URL } = process.env;
 
 mongoose
-  .connect(LOCAL_URL, {
+  .connect(TITLES_URL, {
     useNewUrlParser: true,
     authSource: "admin"
   })
